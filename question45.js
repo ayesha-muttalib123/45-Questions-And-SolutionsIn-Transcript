@@ -1,11 +1,20 @@
-function make_sandwich(items) {
-    console.log("your items are:");
-    for (let i = 0; i < items.length; i++) {
-        console.log(items[i]);
+// Function to store car information in an object
+function create_car(manufacturer, model, ...additionalInfo) {
+    // Create a base car object with the required manufacturer and model
+    let car = {
+        manufacturer: manufacturer,
+        model: model
+    };
+    // Add additional properties to the car object
+    for (const [key, value] of additionalInfo) {
+        car[key] = value;
     }
-    console.log();
+    return car;
 }
-make_sandwich(['lettuce', 'tomato', 'turkey']);
-make_sandwich(['cheese', 'ham', 'mustard', 'pickles']);
-make_sandwich(['bacon', 'egg', 'avocado', 'sriracha']);
+// Call the function with the required information and additional key-value pairs
+let car1 = create_car('Toyota', 'Corolla', ['color', 'blue'], ['year', 2022]);
+let car2 = create_car('Ford', 'Mustang', ['color', 'red'], ['feature', 'sunroof'], ['year', 2021]);
+// Print the car objects
+console.log(car1);
+console.log(car2);
 export {};
